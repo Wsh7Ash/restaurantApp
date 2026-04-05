@@ -1,5 +1,5 @@
 import { Plus, Search, MoreVertical, Edit, Trash2 } from 'lucide-react';
-import { getMenuItems, getCategories } from '../../actions/menu';
+import { getMenuItems, getCategories } from '../../../actions/menu';
 import Link from 'next/link';
 
 export default async function ManageItemsPage() {
@@ -33,7 +33,7 @@ export default async function ManageItemsPage() {
                 </div>
                 <select className="bg-slate-50 px-6 py-3 rounded-xl border-transparent outline-none focus:ring-2 focus:ring-primary-500/20 w-full md:w-auto">
                     <option>All Categories</option>
-                    {categories.map(c => <option key={c.id}>{c.name}</option>)}
+                    {categories.map(c => <option key={c.id}>{c.nameEn}</option>)}
                 </select>
             </div>
 
@@ -64,14 +64,14 @@ export default async function ManageItemsPage() {
                                             {item.imageUrl || '🍲'}
                                         </div>
                                         <div>
-                                            <p className="font-bold text-slate-900">{item.name}</p>
-                                            <p className="text-xs text-slate-400 max-w-[200px] truncate">{item.description}</p>
+                                            <p className="font-bold text-slate-900">{item.nameEn}</p>
+                                            <p className="text-xs text-slate-400 max-w-[200px] truncate">{item.descriptionEn}</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td className="px-8 py-5">
                                     <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-bold">
-                                        {item.category.name}
+                                        {item.category.nameEn}
                                     </span>
                                 </td>
                                 <td className="px-8 py-5 font-bold text-slate-900">${item.price.toFixed(2)}</td>

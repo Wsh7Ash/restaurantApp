@@ -20,20 +20,23 @@ model User {
 }
 
 model Category {
-  id    Int    @id @default(autoincrement())
-  name  String @unique
-  items MenuItem[]
+  id     Int        @id @default(autoincrement())
+  nameEn String     @unique
+  nameAr String     @unique
+  items  MenuItem[]
 }
 
 model MenuItem {
-  id          Int      @id @default(autoincrement())
-  name        String
-  description String?
-  price       Float
-  imageUrl    String?
-  categoryId  Int
-  category    Category @relation(fields: [categoryId], references: [id])
-  orderItems  OrderItem[]
+  id            Int         @id @default(autoincrement())
+  nameEn        String
+  nameAr        String
+  descriptionEn String?
+  descriptionAr String?
+  price         Float
+  imageUrl      String?
+  categoryId    Int
+  category      Category    @relation(fields: [categoryId], references: [id])
+  orderItems    OrderItem[]
 }
 
 model Order {

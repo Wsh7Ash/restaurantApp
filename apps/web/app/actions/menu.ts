@@ -4,17 +4,21 @@ import { db } from '@repo/database';
 import { revalidatePath } from 'next/cache';
 
 export async function addMenuItem(formData: FormData) {
-    const name = formData.get('name') as string;
+    const nameEn = formData.get('nameEn') as string;
+    const nameAr = formData.get('nameAr') as string;
     const price = parseFloat(formData.get('price') as string);
-    const description = formData.get('description') as string;
+    const descriptionEn = formData.get('descriptionEn') as string;
+    const descriptionAr = formData.get('descriptionAr') as string;
     const categoryId = parseInt(formData.get('categoryId') as string);
     const imageUrl = formData.get('imageUrl') as string;
 
     await db.menuItem.create({
         data: {
-            name,
+            nameEn,
+            nameAr,
             price,
-            description,
+            descriptionEn,
+            descriptionAr,
             categoryId,
             imageUrl,
         },
@@ -25,18 +29,22 @@ export async function addMenuItem(formData: FormData) {
 }
 
 export async function updateMenuItem(id: number, formData: FormData) {
-    const name = formData.get('name') as string;
+    const nameEn = formData.get('nameEn') as string;
+    const nameAr = formData.get('nameAr') as string;
     const price = parseFloat(formData.get('price') as string);
-    const description = formData.get('description') as string;
+    const descriptionEn = formData.get('descriptionEn') as string;
+    const descriptionAr = formData.get('descriptionAr') as string;
     const categoryId = parseInt(formData.get('categoryId') as string);
     const imageUrl = formData.get('imageUrl') as string;
 
     await db.menuItem.update({
         where: { id },
         data: {
-            name,
+            nameEn,
+            nameAr,
             price,
-            description,
+            descriptionEn,
+            descriptionAr,
             categoryId,
             imageUrl,
         },

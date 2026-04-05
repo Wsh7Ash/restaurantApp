@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChefHat, ArrowLeft, Save, Loader2 } from 'lucide-react';
 import Link from 'next/link';
-import { addMenuItem, getCategories } from '../../../actions/menu';
+import { addMenuItem, getCategories } from '../../../../actions/menu';
 
 export default function NewItemPage() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    const [categories, setCategories] = useState<{ id: number; name: string }[]>([]);
+    const [categories, setCategories] = useState<any[]>([]);
 
     useEffect(() => {
         async function load() {
@@ -51,15 +51,15 @@ export default function NewItemPage() {
             <div className="bg-white p-10 rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/50">
                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="space-y-2">
-                            <label className="text-sm font-bold text-slate-700">Item Name</label>
-                            <input
-                                name="name"
-                                required
-                                type="text"
-                                placeholder="e.g. Wagyu Truffle Burger"
-                                className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none"
-                            />
+                        <div className="space-y-4">
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700">Item Name (English)</label>
+                                <input name="nameEn" required type="text" placeholder="e.g. Wagyu Truffle Burger" className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm font-bold text-slate-700">Item Name (Arabic)</label>
+                                <input name="nameAr" type="text" placeholder="e.g. برجر واغيو" className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none text-right" />
+                            </div>
                         </div>
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-slate-700">Price ($)</label>
@@ -83,20 +83,20 @@ export default function NewItemPage() {
                         >
                             <option value="">Select a category</option>
                             {categories.map(c => (
-                                <option key={c.id} value={c.id}>{c.name}</option>
+                                <option key={c.id} value={c.id}>{c.nameEn}</option>
                             ))}
                         </select>
                     </div>
 
-                    <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700">Description</label>
-                        <textarea
-                            name="description"
-                            required
-                            rows={4}
-                            placeholder="Tell customers about this item..."
-                            className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none resize-none"
-                        ></textarea>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-2">
+                            <label className="text-sm font-bold text-slate-700">Description (English)</label>
+                            <textarea name="descriptionEn" required rows={4} placeholder="Tell customers about this item..." className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none resize-none"></textarea>
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-bold text-slate-700">Description (Arabic)</label>
+                            <textarea name="descriptionAr" rows={4} placeholder="وصف المنتج للعملاء..." className="w-full px-6 py-4 bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 rounded-2xl transition-all outline-none resize-none text-right" dir="rtl"></textarea>
+                        </div>
                     </div>
 
                     <div className="space-y-2">

@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "menu": "Menu",
+    "story": "Story",
+    "locations": "Locations",
+    "orderNow": "Order Now"
+  },
+  "hero": {
+    "badge": "✨ Experience Premium Dining",
+    "tasteThe": "Taste the",
+    "extraordinary": "Extraordinary",
+    "inEveryBite": "in Every Bite.",
+    "subtitle": "Crafted with passion, delivered with care. Experience culinary perfection at your doorstep.",
+    "viewMenu": "View Menu",
+    "bookTable": "Book a Table"
+  },
+  "cards": {
+    "mansaf": {
+      "title": "Gourmet Mansaf",
+      "desc": "Traditional & Authentic"
+    },
+    "kabsa": {
+      "title": "Spiced Kabsa",
+      "desc": "Fragrant & Delicious"
+    },
+    "reviews": "Based on 10k+ reviews"
+  },
+  "features": {
+    "fresh": {
+      "title": "100% Fresh",
+      "desc": "Locally sourced organic ingredients."
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "desc": "From kitchen to doorstep in 30 mins."
+    },
+    "chefs": {
+      "title": "Master Chefs",
+      "desc": "Award-winning culinary experts."
+    }
+  }
+}
