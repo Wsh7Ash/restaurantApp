@@ -1,0 +1,24 @@
+Γû▓ Next.js 16.1.0 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./apps/web/app/globals.css
+Error evaluating Node.js code
+Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+    [at lt (F:\prjs\Projects\restaurantApp\apps\web\node_modules\tailwindcss\dist\lib.js:38:1643)]
+    at turbopack:///[turbopack-node]/transforms/postcss.ts:56:14 [F:\prjs\Projects\restaurantApp\apps\web\.next\build\chunks\[root-of-the-server]__91cc9ddc._.js:165:20]
+    [at <anonymous>]
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [F:\prjs\Projects\restaurantApp\apps\web\.next\build\chunks\[root-of-the-server]__91cc9ddc._.js:155:35]
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [F:\prjs\Projects\restaurantApp\apps\web\.next\build\chunks\[root-of-the-server]__c8488333._.js:429:26]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:103:5)]
+
+Import trace:
+  Client Component Browser:
+    ./apps/web/app/globals.css [Client Component Browser]
+    ./apps/web/app/layout.tsx [Server Component]
+
+
+    at Module.init (turbopack:///[turbopack-node]/transforms/postcss.ts:43:33) [F:\prjs\Projects\restaurantApp\apps\web\.next\build\chunks\[root-of-the-server]__91cc9ddc._.js:155:35])
+    at run (turbopack:///[turbopack-node]/ipc/evaluate.ts:77:20) [F:\prjs\Projects\restaurantApp\apps\web\.next\build\chunks\[root-of-the-server]__c8488333._.js:429:26])
